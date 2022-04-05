@@ -32,17 +32,17 @@
       </Label>
       <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="488.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Logo-Master-GPhy.png" />
+            <Image url="@img/Logo-Master-GPhy.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="141.0" fitWidth="241.0" layoutX="166.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@277544608_1177995552974348_5964012053272690431_n.png" />
+            <Image url="@img/277544608_1177995552974348_5964012053272690431_n.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="80.0" fitWidth="88.0" layoutX="24.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Université_de_Poitiers_(logo_2012).png" />
+            <Image url="@img/Université_de_Poitiers_(logo_2012).png" />
          </image>
       </ImageView>
    </children>
