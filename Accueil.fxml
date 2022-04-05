@@ -9,19 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Accueil">
    <children>
-      <ImageView fitHeight="127.0" fitWidth="97.0" layoutX="472.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Cours%20de%20L3%20S6%20bizus%20/Stage%20Suède%20/STAGE%20TRAVAIL%20+%20RAPPORT/Rapport%20Latex/GUEYLARD_Marine_StageL3GBI_21/Logo-Master-GPhy.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="106.0" layoutX="25.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../Downloads/Université_de_Poitiers_(logo_2012).png" />
-         </image>
-      </ImageView>
       <MenuBar layoutX="44.0" layoutY="21.0" prefHeight="28.0" prefWidth="312.0">
         <menus>
           <Menu mnemonicParsing="false" text="Accueil">
@@ -41,9 +30,19 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <ImageView fitHeight="151.0" fitWidth="253.0" layoutX="174.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="488.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/277544608_1177995552974348_5964012053272690431_n.png" />
+            <Image url="@Logo-Master-GPhy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="241.0" layoutX="166.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@277544608_1177995552974348_5964012053272690431_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="88.0" layoutX="24.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Université_de_Poitiers_(logo_2012).png" />
          </image>
       </ImageView>
    </children>
