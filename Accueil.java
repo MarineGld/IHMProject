@@ -11,7 +11,8 @@ public class Accueil extends Application {
 
 
     public static void main(String[] args) {
-        launch();
+    //    launch();
+        System.out.println(database.connect(database.location));
     }
     @Override
     public void start(Stage stage) throws Exception {
@@ -26,6 +27,7 @@ public class Accueil extends Application {
 
     }
 
+
     public OffreStageController getOffreStageController() {
         return offreStageController;
     }
@@ -33,4 +35,6 @@ public class Accueil extends Application {
     public AccueilController getAccueilController() {
         return accueilController;
     }
+
+
 }
