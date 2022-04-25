@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OffreStageController">
+<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="525.0" layoutY="19.0" prefHeight="17.0" prefWidth="194.0" text="GPh-internships" textFill="#2699a1">
             <font>
