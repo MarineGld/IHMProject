@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OffreStageController">
     <children>
         <Label layoutX="525.0" layoutY="19.0" prefHeight="17.0" prefWidth="194.0" text="GPh-internships" textFill="#2699a1">
             <font>
@@ -29,13 +29,13 @@
                 <Image url="@img/Université_de_Poitiers_(logo_2012).png" />
             </image>
         </ImageView>
-      <TableView layoutX="14.0" layoutY="105.0" prefHeight="272.0" prefWidth="384.0">
+      <TableView fx:id="Table" layoutX="14.0" layoutY="105.0" onSort="#viewStage" prefHeight="272.0" prefWidth="384.0">
         <columns>
-          <TableColumn prefWidth="92.0" resizable="false" text="Nom Structure" />
-          <TableColumn prefWidth="138.0" resizable="false" text="Sujet de stage" />
-            <TableColumn minWidth="0.0" prefWidth="60.0" resizable="false" text="Début " />
-            <TableColumn minWidth="5.0" prefWidth="48.0" resizable="false" text="Durée " />
-            <TableColumn minWidth="0.0" prefWidth="45.0" resizable="false" text="Promo" />
+          <TableColumn fx:id="nomStructure" prefWidth="92.0" resizable="false" text="Nom Structure" />
+          <TableColumn fx:id="sujetStage" prefWidth="138.0" resizable="false" text="Sujet de stage" />
+            <TableColumn fx:id="debutStage" minWidth="0.0" prefWidth="60.0" resizable="false" text="Début " />
+            <TableColumn fx:id="duree" minWidth="5.0" prefWidth="48.0" resizable="false" text="Durée " />
+            <TableColumn fx:id="promo" minWidth="0.0" prefWidth="45.0" resizable="false" text="Promo" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -10,8 +10,8 @@ public class Accueil extends Application {
 
 
     public static void main(String[] args) {
-    //    launch();
-        System.out.println(Database.getAllStage());
+       launch();
+      //  System.out.println(Database.getAllStage());
     }
     @Override
     public void start(Stage stage) throws Exception {
