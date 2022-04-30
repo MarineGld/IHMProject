@@ -52,17 +52,23 @@ public class OffreStage {
         this.debutStage = debutStage;
     }
 
-    public int getPromo() {
-        return promo;
+    public String getPromo() {
+        if (promo == 1) {
+            return "L3";
+        }
+        else if (promo == 2) {
+            return "M1";
+        }
+        else {
+            return "M2";
+        }
     }
 
     public void setPromo(int promo) {
         this.promo = promo;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
     @Override
     public String toString() {

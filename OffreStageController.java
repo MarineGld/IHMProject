@@ -4,18 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 
@@ -39,6 +41,42 @@ public class OffreStageController implements Initializable {
         @FXML
         private TableColumn<OffreStage, String> sujetStage;
 
+        @FXML
+        private TextField Saisie_Nom;
+
+        @FXML
+        private TextField Saisie_Sujet;
+
+        @FXML
+        private TextField Saisie_Duree;
+
+        @FXML
+        private TextField Saisie_Date;
+
+        @FXML
+        private RadioButton Boutton_L3;
+
+        @FXML
+        private RadioButton Boutton_M1;
+
+        @FXML
+        private RadioButton Boutton_M2;
+
+        @FXML
+        private AnchorPane Carre_bleu;
+
+        @FXML
+        private Button Boutton_Supprimer;
+
+        @FXML
+        private Button Boutton_Ajouter;
+
+        @FXML
+        private Button Boutton_Valider;
+
+        @FXML
+        private Button Boutton_Annuler;
+
 
 
         public ObservableList<OffreStage> data = FXCollections.observableArrayList();
@@ -48,6 +86,7 @@ public class OffreStageController implements Initializable {
                 String sql = "SELECT * FROM mesStages";
                 PreparedStatement stat = connection.prepareStatement(sql);
                 ResultSet rs = stat.executeQuery();
+                data.clear();
                 while(rs.next()) {
                     data.add(new OffreStage(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getInt(6)));
                 }
@@ -84,5 +123,44 @@ public class OffreStageController implements Initializable {
             leStage.setScene(new Scene(newScene.load()));
         }
 
+         public void clickLigne (ActionEvent e) {
+            TableRow ligne = (TableRow) e.getSource();
+            int id = ligne.getIndex();
+            OffreStage lestage = data.get(id);
+            modif(lestage);
+    }
+
+        public void addStage (ActionEvent e) {
+          Button button = (Button) e.getSource();
+            OffreStage lestage = data.get(1);
+            modif(lestage);
+          Carre_bleu.setVisible(true);
+
+    }
+
+        public void actAnnuler (ActionEvent e) {
+            Button button = (Button) e.getSource();
+            Carre_bleu.setVisible(false);
+            Boutton_Ajouter.setVisible(true);
+    }
+
+        public void actValider (ActionEvent e) {
+            Button button = (Button) e.getSource();
+
+            Carre_bleu.setVisible(false);
+            Boutton_Ajouter.setVisible(true);
+    }
+
+        public void modif (OffreStage lestage) {
+            Carre_bleu.setVisible(true);
+            Saisie_Nom.setText(lestage.getNomStructure());
+            Saisie_Sujet.setText(lestage.getSujetStage());
+            Saisie_Duree.setText(String.valueOf(lestage.getDuree()));
+            Saisie_Date.setText(lestage.getDebutStage());
+            if(lestage.getPromo()=="L3") { Boutton_L3.setSelected(true); }
+            if(lestage.getPromo()=="M1") { Boutton_M1.setSelected(true); }
+            if(lestage.getPromo()=="M2") { Boutton_M2.setSelected(true); }
+            Boutton_Supprimer.setVisible(true);
+    }
 
     }

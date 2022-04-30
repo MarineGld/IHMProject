@@ -42,7 +42,6 @@ public class Database {
         try (Connection connection = connect(location)) {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
-
             while (rs.next()) {
                 laListe.add(new OffreStage(
                         rs.getInt("id"),

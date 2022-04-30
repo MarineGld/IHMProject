@@ -23,5 +23,6 @@ public class AccueilController {
         newScene.setController(accueil.getOffreStageController());
         Stage leStage =(Stage) button.getScene().getWindow();
         leStage.setScene(new Scene(newScene.load()));
+        accueil.getOffreStageController().viewStage();
     }
 }
