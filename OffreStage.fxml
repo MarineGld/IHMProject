@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="525.0" layoutY="19.0" prefHeight="17.0" prefWidth="194.0" text="GPh-internships" textFill="#2699a1">
             <font>
@@ -22,7 +29,7 @@
                 <Image url="@img/Université_de_Poitiers_(logo_2012).png" />
             </image>
         </ImageView>
-      <TableView fx:id="Table" layoutX="14.0" layoutY="105.0" onSort="#viewStage" prefHeight="272.0" prefWidth="384.0">
+      <TableView fx:id="Table" layoutX="14.0" layoutY="105.0" onMouseClicked="#modif" onSort="#viewStage" prefHeight="272.0" prefWidth="384.0">
         <columns>
           <TableColumn fx:id="nomStructure" prefWidth="92.0" resizable="false" text="Nom Structure" />
           <TableColumn fx:id="sujetStage" prefWidth="138.0" resizable="false" text="Sujet de stage" />
@@ -43,9 +50,12 @@
             <Label layoutX="9.0" layoutY="170.0" prefHeight="17.0" prefWidth="188.0" text="Durée du stage (en semaines)" />
             <TextField fx:id="Saisie_Duree" layoutX="182.0" layoutY="166.0" prefHeight="26.0" prefWidth="54.0" />
             <Label layoutX="8.0" layoutY="212.0" prefHeight="17.0" prefWidth="188.0" text="Début du stage" />
-            <RadioButton fx:id="Boutton_L3" layoutX="9.0" layoutY="274.0" mnemonicParsing="false" text="L3" />
-            <RadioButton fx:id="Boutton_M1" layoutX="60.0" layoutY="274.0" mnemonicParsing="false" text="M1" />
-            <RadioButton fx:id="Boutton_M2" layoutX="110.0" layoutY="274.0" mnemonicParsing="false" text="M2" />
+            <RadioButton fx:id="Boutton_L3" layoutX="9.0" layoutY="274.0" mnemonicParsing="false" text="L3">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Promobutton" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="Boutton_M1" layoutX="60.0" layoutY="274.0" mnemonicParsing="false" text="M1" toggleGroup="$Promobutton" />
+            <RadioButton fx:id="Boutton_M2" layoutX="110.0" layoutY="274.0" mnemonicParsing="false" text="M2" toggleGroup="$Promobutton" />
             <Label layoutX="9.0" layoutY="248.0" prefHeight="17.0" prefWidth="188.0" text="Promotion :" />
             <Button fx:id="Boutton_Supprimer" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" style="-fx-background-color: #CF4D4D;" text="Supprimer le stage" textFill="WHITE" visible="false" />
             <Button layoutX="210.0" layoutY="283.0" mnemonicParsing="false" onAction="#actAnnuler" text="Annuler" />

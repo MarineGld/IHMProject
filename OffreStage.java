@@ -1,4 +1,7 @@
-
+import javafx.beans.DefaultProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.MultipleSelectionModel;
 
 public class OffreStage {
 
@@ -8,6 +11,8 @@ public class OffreStage {
     private int duree;
     private String debutStage;
     private int promo;
+    private Object selectionModel;
+
 
     public OffreStage(int id, String nomStructure, String sujetStage, int duree, String debutStage, int promo){
 
@@ -74,4 +79,6 @@ public class OffreStage {
     public String toString() {
         return nomStructure;
     }
+
+
 }

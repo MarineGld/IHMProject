@@ -77,6 +77,9 @@ public class OffreStageController implements Initializable {
         @FXML
         private Button Boutton_Annuler;
 
+        @FXML
+        ToggleGroup Promobutton;
+
 
 
         public ObservableList<OffreStage> data = FXCollections.observableArrayList();
@@ -123,17 +126,10 @@ public class OffreStageController implements Initializable {
             leStage.setScene(new Scene(newScene.load()));
         }
 
-         public void clickLigne (ActionEvent e) {
-            TableRow ligne = (TableRow) e.getSource();
-            int id = ligne.getIndex();
-            OffreStage lestage = data.get(id);
-            modif(lestage);
-    }
 
         public void addStage (ActionEvent e) {
           Button button = (Button) e.getSource();
             OffreStage lestage = data.get(1);
-            modif(lestage);
           Carre_bleu.setVisible(true);
 
     }
@@ -141,7 +137,7 @@ public class OffreStageController implements Initializable {
         public void actAnnuler (ActionEvent e) {
             Button button = (Button) e.getSource();
             Carre_bleu.setVisible(false);
-            Boutton_Ajouter.setVisible(true);
+        //    Boutton_Ajouter.setVisible(true);
     }
 
         public void actValider (ActionEvent e) {
@@ -151,16 +147,27 @@ public class OffreStageController implements Initializable {
             Boutton_Ajouter.setVisible(true);
     }
 
-        public void modif (OffreStage lestage) {
-            Carre_bleu.setVisible(true);
-            Saisie_Nom.setText(lestage.getNomStructure());
-            Saisie_Sujet.setText(lestage.getSujetStage());
-            Saisie_Duree.setText(String.valueOf(lestage.getDuree()));
-            Saisie_Date.setText(lestage.getDebutStage());
-            if(lestage.getPromo()=="L3") { Boutton_L3.setSelected(true); }
-            if(lestage.getPromo()=="M1") { Boutton_M1.setSelected(true); }
-            if(lestage.getPromo()=="M2") { Boutton_M2.setSelected(true); }
-            Boutton_Supprimer.setVisible(true);
+        public void modif () {
+            if (Table.getSelectionModel().getSelectedItem() != null) {
+                OffreStage lestage = (OffreStage) Table.getSelectionModel().getSelectedItem();
+
+                Carre_bleu.setVisible(true);
+                Saisie_Nom.setText(lestage.getNomStructure());
+                Saisie_Sujet.setText(lestage.getSujetStage());
+                Saisie_Duree.setText(String.valueOf(lestage.getDuree()));
+                Saisie_Date.setText(lestage.getDebutStage());
+                if (lestage.getPromo() == "L3") {
+                    Boutton_L3.setSelected(true);
+                }
+                else if (lestage.getPromo() == "M1") {
+                    Boutton_M1.setSelected(true);
+                }
+                else if (lestage.getPromo() == "M2") {
+                    Boutton_M2.setSelected(true);
+                }
+                Boutton_Supprimer.setVisible(true);
+            }
+
     }
 
     }
