@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
         <Label layoutX="525.0" layoutY="19.0" prefHeight="17.0" prefWidth="194.0" text="GPh-internships" textFill="#2699a1">
             <font>
@@ -29,7 +29,7 @@
                 <Image url="@img/Université_de_Poitiers_(logo_2012).png" />
             </image>
         </ImageView>
-      <TableView fx:id="Table" layoutX="14.0" layoutY="105.0" onMouseClicked="#modif" onSort="#viewStage" prefHeight="272.0" prefWidth="384.0">
+      <TableView fx:id="Table" layoutX="14.0" layoutY="105.0" onMouseClicked="#modifSetUp" onSort="#viewStage" prefHeight="272.0" prefWidth="384.0">
         <columns>
           <TableColumn fx:id="nomStructure" prefWidth="92.0" resizable="false" text="Nom Structure" />
           <TableColumn fx:id="sujetStage" prefWidth="138.0" resizable="false" text="Sujet de stage" />
@@ -57,14 +57,14 @@
             <RadioButton fx:id="Boutton_M1" layoutX="60.0" layoutY="274.0" mnemonicParsing="false" text="M1" toggleGroup="$Promobutton" />
             <RadioButton fx:id="Boutton_M2" layoutX="110.0" layoutY="274.0" mnemonicParsing="false" text="M2" toggleGroup="$Promobutton" />
             <Label layoutX="9.0" layoutY="248.0" prefHeight="17.0" prefWidth="188.0" text="Promotion :" />
-            <Button fx:id="Boutton_Supprimer" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" style="-fx-background-color: #CF4D4D;" text="Supprimer le stage" textFill="WHITE" visible="false" />
+            <Button fx:id="Boutton_Supprimer" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" style="-fx-background-color: #CF4D4D;" onAction="#actSupprimer" text="Supprimer le stage" textFill="WHITE" visible="false" />
             <Button layoutX="210.0" layoutY="283.0" mnemonicParsing="false" onAction="#actAnnuler" text="Annuler" />
             <Button layoutX="274.0" layoutY="283.0" mnemonicParsing="false" onAction="#actValider" text="Valider" />
             <TextField fx:id="Saisie_Date" layoutX="92.0" layoutY="200.0" prefHeight="17.0" prefWidth="107.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="497.0" layoutY="444.0" mnemonicParsing="false" onAction="#addStage" style="-fx-background-color: #2699a1 #2699a1;" text="Ajouter un stage" textFill="WHITE" />
-      <Button layoutX="58.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToAccueil" text="Accueil" />
+        <Button layoutX="497.0" layoutY="444.0" mnemonicParsing="false"  style="-fx-background-color: #2699a1 #2699a1;" onAction="#actAjouter" text="Ajouter un stage" textFill="WHITE"/>
+        <Button layoutX="58.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToAccueil" text="Accueil" />
       <Button alignment="TOP_CENTER" layoutX="116.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="216.0" style="-fx-background-color: #8FCBCA;" text="Offre de stage" />
     </children>
 </AnchorPane>

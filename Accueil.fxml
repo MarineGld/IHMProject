@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="526.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Label layoutX="452.0" layoutY="26.0" prefHeight="47.0" prefWidth="287.0" text="GPh-internships" textFill="#2699a1">
          <font>
@@ -30,6 +30,6 @@
          </image>
       </ImageView>
       <Button layoutX="48.0" layoutY="37.0" mnemonicParsing="false" style="-fx-background-color: #8FCBCA;" text="Accueil" />
-      <Button alignment="TOP_CENTER" layoutX="106.0" layoutY="37.0" mnemonicParsing="false" onAction="#goToOffreStage" prefHeight="28.0" prefWidth="216.0" text="Offre de stage" />
+      <Button alignment="TOP_CENTER" layoutX="106.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#goToOffreStage" prefHeight="28.0" prefWidth="216.0" text="Offre de stage" />
    </children>
 </AnchorPane>
